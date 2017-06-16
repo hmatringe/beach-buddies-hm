@@ -1,0 +1,31 @@
+<% if @user.results.empty? && @user == current_user %>
+  <div class="bbbox">
+    <div class="bbbox-title">
+      <h4>Results</h4>
+    </div>
+    <div class="bbbox-content">
+      <h4 class="text-center bb-alert-orange">
+        <%=  "Add a first result now!" %>
+      </h4>
+    </div>
+  </div>
+<% elsif @user.results.present? %>
+  <div class="bbbox">
+    <div class="bbbox-title">
+      <h4> <%= pluralize_without_count @user.results.size, "Result" %> </h4>
+    </div>
+    <div class="bbbox-content">
+        <ul>
+          <% @user.results.each do |result| %>
+            <li>
+              <strong><%= result.date %>: <%= result.game_name %> </strong> <br>
+              type: <%= result.game_type %> <br>
+              achievement: <%= result.achievement %> <br>
+              <%= result.description %>
+            </li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
+<% else %>
+<% end %>

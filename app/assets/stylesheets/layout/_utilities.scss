@@ -1,0 +1,69 @@
+/* -------------------------------------
+ * Utilities classes
+ * These are examples of utilities classes
+ * Feel free to change them and create your own
+ * ------------------------------------- */
+
+// Paddings
+.padded {
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+//Pages top padding to avoid navbar conflict
+.bb-container {
+  padding-top: 70px;
+  min-height: 95vh;
+}
+// not using...
+.bb-container-move-down {
+  position: relative;
+  top: 70px;
+}
+
+// Backgrounds
+.bg-black {
+  background: #4a4a4a;
+}
+.bg-grey {
+  background: #aeaeae;
+}
+.bg-blue {
+  background: #00a3e1;
+}
+.bg-dark-blue {
+  background: #3b5998;
+}
+
+
+// colors
+.brand-color {
+  color: $brand-color;
+}
+.brand-complementary-color {
+  color: $brand-complementary-color;
+}
+.bb-alert-red {
+  color: $red;
+}
+.bb-alert-yellow {
+  color: $yellow;
+}
+.bb-alert-orange {
+  color: $orange;
+}
+.bb-alert-green {
+  color: $gray
+}
+.bb-alert-gray {
+  color: $gray;
+}
+.bb-alert-blue {
+  color: $blue;
+}
+.bb-alert-second-blue {
+  color: $second-blue;
+}
+.flag {
+  box-shadow: 0 0 1px 1px $brand-complementary-color;
+}

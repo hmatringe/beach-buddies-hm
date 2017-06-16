@@ -1,0 +1,32 @@
+<% if @user.rankings.empty? && @user == current_user %>
+  <div class="bbbox">
+    <div class="bbbox-title">
+      <h4>Rankings</h4>
+    </div>
+    <div class="bbbox-content">
+      <h4 class="text-center bb-alert-orange">
+        <%=  "Add a first ranking now!" %>
+      </h4>
+    </div>
+  </div>
+
+<% elsif @user.rankings.present? %>
+
+  <div class="bbbox">
+    <div class="bbbox-title">
+      <h4> <%= pluralize_without_count @user.rankings.size, "Ranking" %> </h4>
+    </div>
+    <div class="bbbox-content">
+        <% @user.rankings.each do |ranking| %>
+            <%# flag_icon(ranking.federation.country.country_code.to_sym) %>
+            <span class="flag-icon <%= "flag-icon-#{ranking.federation.country.country_code.to_sym}" %>"></span>
+            Ranking <strong><%= ranking.score %></strong><em>th</em> as of <strong><%= ranking.date %></strong> in
+          <a href="<%= ranking.federation.url %>" target="_blank"><%= ranking.federation.name.downcase %></a>
+            (<%= ranking.federation.country.name %>)
+
+        <% end %>
+    </div>
+  </div>
+
+<% else %>
+<% end %>

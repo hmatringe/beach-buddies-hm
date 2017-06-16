@@ -1,0 +1,122 @@
+// .beachbuddy-btn {
+//   position: relative;
+// }
+
+.beachbuddy-btn-main {
+  color: #666666;
+  padding: 10px;
+  border-radius: 7px;
+  border: 2px solid $brand-color;
+  font-weight: lighter;
+  transition: background 0.2s ease;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  background: rgba(247,247,29,0.05);
+  z-index: 10;
+}
+.beachbuddy-btn-main:visited {
+  color: #666666;
+  text-decoration: none !important;
+}
+.beachbuddy-btn-main:hover {
+  color: #666666;
+  background: rgba(247,247,29,0.2);
+  border-bottom: 3px solid $brand-color;
+  text-decoration: none !important;
+}
+.beachbuddy-btn-main:active {
+  color: #666666;
+  padding: 9px 10px 11px;
+  text-decoration: none !important;
+}
+.beachbuddy-btn-complementary {
+  // color: #666666;
+  color: $brand-complementary-color;
+  padding: 10px;
+  border-radius: 7px;
+  border: 2px solid $brand-complementary-color;
+  font-weight: lighter;
+  transition: background 0.2s ease;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  // background: rgba(34,6,43,0.05);
+  background: $brand-color;
+
+}
+.beachbuddy-btn-complementary:visited {
+  // color: #666666;
+  color: $brand-complementary-color;
+  text-decoration: none !important;
+  background: $brand-color;
+  border: 2px solid $brand-complementary-color;
+}
+.beachbuddy-btn-complementary:hover {
+  // color: #666666;
+  color: $brand-complementary-color;
+  // background: rgba(34,6,43,0.2);
+  // font-weight: bolder;
+  text-decoration: none !important;
+  background: $brand-color;
+  border-top: 2px solid $brand-complementary-color;
+  border-right: 2px solid $brand-complementary-color;
+  border-left: 2px solid $brand-complementary-color;
+  border-bottom: 3px solid $brand-complementary-color;
+}
+.beachbuddy-btn-complementary:active {
+  // color: #666666;
+  color: $brand-complementary-color;
+  padding: 9px 10px 11px;
+  text-decoration: none !important;
+  background: $brand-color;
+  border: 2px solid $brand-complementary-color;
+}
+.beachbuddy-btn-danger {
+  color: #666666;
+  padding: 10px;
+  border-radius: 7px;
+  border: 2px solid $brand-color;
+  font-weight: lighter;
+  transition: background 0.2s ease;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  background: rgba(247,247,29,0.05);
+  z-index: 10;
+}
+.beachbuddy-btn-danger:visited {
+  color: #666666;
+  text-decoration: none !important;
+}
+.beachbuddy-btn-danger:hover {
+  color: #666666;
+  background: rgba(247,247,29,0.2);
+  border-bottom: 3px solid $brand-color;
+  text-decoration: none !important;
+}
+.beachbuddy-btn-danger:active {
+  color: #666666;
+  padding: 9px 10px 11px;
+  text-decoration: none !important;
+}
+
+// Behaviour
+.beachbuddy-btn-align-right {
+  text-align: right;
+}
+.btn-lucky {
+  color: #E6E6E6;
+  border-radius: 6px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  padding: 12px 14px;
+  font-weight: bold;
+  background: black;
+  transition: background 0.3s ease;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.btn-lucky:hover {
+  opacity: 1;
+  background: $brand-color;
+  text-decoration: none;
+  color: black;
+}

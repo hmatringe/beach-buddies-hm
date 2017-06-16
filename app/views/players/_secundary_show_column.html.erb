@@ -1,0 +1,38 @@
+<!--   <div class="bbbox bbbox-item"> -->
+      <br><br>
+    <div class="text-center">
+
+      <% if @user == current_user %>
+
+
+        <!-- user logged in on his/her own show page -->
+        <%= link_to "Edit profile", profile_path, class: "beachbuddy-btn-complementary"  %>
+      <% elsif current_user.nil? %>
+        <!-- user not logged in -->
+        <%= link_to "SHOW CONTACT DETAILS", new_user_session_path, class:"beachbuddy-btn-complementary" %>
+      <% else %>
+        <!-- user logged in on someone else's show page -->
+        <%= link_to "Show contact details", '#', class: "beachbuddy-btn-complementary", id: "show-contact-details-box" %>
+        <div id="contact_details-box" hidden>
+          <%= render 'players/contact_details', user: @user %>
+        </div>
+      <% end %>
+    </div>
+    <br>
+  <!-- </div> -->
+
+  <div class="text-center">
+      <p class="bb-alert-orange">
+        <% if @user == current_user && @user.city == "Atlantis" %>
+          Please update your usual volley ball court address!
+        <br><br>
+        <% end %>
+      </p>
+    <h4>Usual Court</h4>
+  </div>
+  <div class="bbbox">
+    <!-- ex until we implement geocoder -->
+    <%# image_tag "map_ex", class: "bbbox-map" %>
+    <div id="map" style="width: 100%; height: 500px;"></div>
+
+  </div>

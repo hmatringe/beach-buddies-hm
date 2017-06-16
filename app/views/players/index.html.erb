@@ -1,0 +1,118 @@
+<div class="container bb-container">
+      <div class="bbbox-filter">
+        <form action="/players" class="index-bb-filter" id="players-search-form" data-remote="true" data-type="json">
+          <div class="bbbox-filter-content">
+            <div class="bbbox-filter-group">
+              <h3>Filters</h3>
+            </div>
+
+          <!-- <div class="bbbox-filter-content"> -->
+            <% @available_facets.each do |key, values| %>
+                    <div class="bbbox-filter-group">
+                      <label for="gender" class=""><%= key.upcase %>:</label><br>
+                      <% values.each do |val| %>
+                        <input type="checkbox" name="<%= key %>[]" value="<%= val %>" class=""<%= 'checked' if @facets[key].include?(val) %>> <%= t val %>
+                    <% end %>
+                    </div>
+            <% end %>
+
+            <div class="bbbox-filter-group">
+              <input name="location" type="text" class="bbbox-filter-location-search" id="players-search" value=<%= @location %>>
+            </div>
+          </div>
+          <!-- set value for hidden field - location -->
+        </form>
+      </div>
+
+ <!--    form url=players method=get
+      hidden location=@location
+      input gender=@gender
+      input level=@level
+      submit -->
+
+
+      <% if @users.empty? %>
+        <h3 class="text-center"><%= "There are #{@users.count} players in #{params[:location]} please try another search 🙂" %></h3>
+      <% end %>
+
+
+      <% @users.each do |user| %>
+        <div class="product <%= "product-" + user.gender %>">
+
+          <div class='product-upvote'>
+            <!-- XXX not available yet XXX-->
+
+            <%# flag_icon(user.rankings.first.federation.country.country_code.to_sym) unless user.rankings.empty? %>
+            <!-- XXX not available yet XXX-->
+            <div class='product-count'><%# user.rankings.first.score unless user.rankings.empty? %></div>
+          </div>
+          <!-- XXX default pictures XXX-->
+          <div class="product-image-container">
+            <% if user.photos.first %>
+              <%=  cl_image_tag user.photos.first.path, width: 100, height: 100, crop: :fill, class: "product-image hidden-xs" %>
+            <% else %>
+              <% if user.facebook_picture_url %>
+                  <%=  image_tag("#{user.facebook_picture_url}", class: "product-image hidden-xs") %>
+                <% else %>
+                  <%=  image_tag("default-#{user.gender}-#{rand(1..4)}.jpg", class: "product-image product-image-default hidden-xs ")%>
+              <% end %>
+            <% end %>
+          </div>
+          <!-- Unfortunately, FB login profile pictures saved in DB are only 50x50px.   -->
+          <div class='product-body'>
+            <h3>
+              <%= user.first_name %> <%= user.last_name %>
+              <span class="product-level <%= "product-level-" + user.level %>"><%= user.level %></span>
+            </h3>
+            <!-- XXX not available yet XXX-->
+            <!-- Use <%= user.usual_court_address %> and install geocoder -->
+            <em>from <%= user.city %>, <%= user.country %></em>. <br>
+            <!-- <em>from Copenhagen, DK</em>. <br> -->
+            <%= user.in_outdoors.nil? ? " " : "Plays " + user.in_outdoors.downcase %>
+            <% if user.description %>
+            <p> <%= user.description.length > 148 ? "#{user.description[0..148]}..." : user.description %></p>
+            <% end %>
+          </div>
+
+          <div class="product-body-partner-team-container hidden-xs">
+            <% if user.team %>
+            <% if partner = user.team.users.find {|u| u != user} %>
+            <div class='product-body-partner'>
+              <% if partner.photos.empty? %>
+              <%=  image_tag("default-#{partner.gender}-#{rand(1..4)}.jpg", class: "product-image product-image-default product-image-partner hidden-xs ")%>
+              <% else %>
+              <%#  image_tag("louise.jpg", class: "product-image-partner hidden-xs") %>
+              <%=  cl_image_tag partner.photos.first.path, class: "product-image product-image-partner hidden-xs" %>
+              <% end %>
+              <span>
+                <strong>Team-mate:</strong> <br> <%= partner.first_name ||= "-" %> <%= partner.last_name ||= "-" %>
+              </span>
+            </div>
+            <% end %>
+            <% end %>
+            <%# unless user.team.nil? %>
+              <!-- <div class='product-body-team'>
+                <%#  image_tag("default-#{user.gender}-#{rand(1..4)}.jpg", class: "product-image-team hidden-xs")%>
+                <%# unless user.team.facebook_page %>
+                  <a href="<%# user.team.facebook_page %>" target="_blank"><i class="fa fa-facebook"></i></a>
+                <%# end %>
+                <span>
+                  <strong>Team:</strong> <%# user.team.name ||= "Not named" %>
+                </span>
+              </div> -->
+            <%# end %>
+            </div>
+            <ul class="list-inline product-controls hidden-sm hidden-xs">
+              <% if user.facebook_page %>
+              <li><a href="<%= user.facebook_page %>" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <% end %>
+              <% if user.instagram_account %>
+              <li><a href="<%= user.instagram_account %>" target="_blank"><i class="fa fa-instagram"></i></a></li>
+              <% end %>
+              <!-- <li><a href=""><i class="fa fa-arrow-right"></i></a></li> -->
+            </ul>
+            <%= link_to "", user_path(user), class: "product-card-link" %>
+          </div> <!-- end of product card -->
+        <% end %>
+
+</div>

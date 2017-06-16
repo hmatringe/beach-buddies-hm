@@ -1,0 +1,12 @@
+  <!-- <div class="bbbox"> -->
+    <div class="bbbox-contact-details-box-content text-center">
+      <% if @user.phone_number.present? %>
+        <div><i class="fa fa-phone"></i> <%= @user.phone_number %></div>
+      <br>
+      <% end %>
+      <div><%= @user.email %></div>
+      <br>
+      <div><a href="mailto:<%= @user.email %>?Subject=Let's Beach Volley together!" target="_top _blank" class="beachbuddy-btn-complementary">Send an email</a></div>
+      <br>
+    </div>
+  <!-- </div> -->

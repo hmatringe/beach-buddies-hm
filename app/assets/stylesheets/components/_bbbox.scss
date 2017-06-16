@@ -1,0 +1,108 @@
+.bbbox {
+  box-shadow: 0 0 1px 1px $brand-complementary-color;
+  position: relative;
+  min-height: 10vh;
+  margin: 20px;
+  // z-index: -1;
+}
+.bbbox-title {
+  box-shadow: 0 0 1px 1px $brand-complementary-color;
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  background-color: white;
+  padding: 3px 15px;
+  font-style: bolder italic capitalize;
+  border-radius: 7px;
+
+}
+.bbbox-content {
+  padding: 50px 10px 10px 10px;
+  text-align: left;
+  z-index: -1;
+  background-color: white;
+  }
+.bbbox-item {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  // background: rgba(34,6,43,0.05);
+  padding: 10px;
+  z-index: -1;
+}
+.bbbox-thumbnail {
+  // width: 100px;
+  // height: 100px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.bbbox-map {
+  width:100%;
+}
+.bbbox-video {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.bbbox-missing {
+  background-color: gray;
+  height: 10px;
+  width: 50px;
+}
+// CONTACT ACTION ON SHOW PAGE
+.bbbox-contact-details-box-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-style: bolder;
+  color: $brand-complementary-color;
+}
+// FILTER ON INDEX PAGE
+.bbbox-filter {
+  box-shadow: 0 0 1px 1px $brand-complementary-color;
+  position: relative;
+  // min-height: 10vh;
+  margin: 10px 0;
+  // z-index: -1;
+}
+.bbbox-filter-title {
+  box-shadow: 0 0 1px 1px $brand-complementary-color;
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  background-color: white;
+  padding: 10px 0;
+  font-style: bolder italic capitalize;
+  border-radius: 7px;
+
+}
+.bbbox-filter-content {
+  padding: 10px 10px 10px 30px;
+  // text-align: left;
+  z-index: -1;
+  background-color: $brand-color;
+  display: flex;
+  justify-content:space-around;
+  align-items:center;
+
+  }
+.bbbox-filter-group {
+  // border: red solid 1px;
+  padding: 5px 0;
+}
+.bbbox-filter-location-search {
+  // background-color: red;
+  // color: #666666;
+  // outline: none;
+  // transition: all 0.15s ease;
+  padding: 0 10px;
+  line-height: 40px;
+  font-weight: lighter;
+  border: 2px solid $brand-complementary-color;
+  border-radius: 7px;
+  flex: 0 1 auto;
+}

@@ -1,0 +1,24 @@
+
+<div class="container bb-container">
+  <div class="row">
+
+  <%= render 'profile_main', user: @user, team: @team %>
+
+  <div class="col-xs-12 col-md-6">
+    <%= render 'profile_team', user: @user, team: @team %>
+  </div>
+
+  <div class="col-xs-12 col-md-6">
+    <%= render 'profile_results', user: @user, team: @team %>
+  </div>
+
+  <div class="col-xs-12 col-md-6">
+    <%= render 'profile_rankings', user: @user, team: @team %>
+  </div>
+
+  <div class="col-xs-12 col-md-6">
+    <%= render 'profile_videos', user: @user, team: @team %>
+  </div>
+
+  </div>
+</div>

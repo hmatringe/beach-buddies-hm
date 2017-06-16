@@ -1,0 +1,42 @@
+/* -------------------------------------
+ * Fonts
+ * ------------------------------------- */
+// Google fonts
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+
+// Local fonts (uncomment following lines)
+@font-face {
+  font-family: "Futura";
+     src:     font-url('Futura.ttc') format('truetype')
+}
+$beach-buddy-font: "Futura";
+
+$base-font: "Open Sans", "Helvetica", "sans-serif";
+$header-font: $beach-buddy-font, "Raleway", "sans-serif";
+// Font-size and line-height
+$base-size: 16px;
+$base-height: 1.4;
+
+/* -------------------------------------
+ * Colors
+ * ------------------------------------- */
+// Scheme
+// yellow
+$brand-color: #F7F71D;
+// green
+// $brand-color: #31E22B;
+//orange
+// $brand-color: #ED3E04;
+// blue
+// $brand-color: #5472DD;
+
+// (yellow) purple
+$brand-complementary-color: #22062B;
+
+$red: #9A031E;
+$second-blue: #4465DD;
+$blue: $brand-complementary-color;
+$yellow: $brand-color;
+$orange: #FE7F2D;
+$green: #9BC53D;
+$gray: #1A1B1C;
